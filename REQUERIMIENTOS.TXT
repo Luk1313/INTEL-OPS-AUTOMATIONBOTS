@@ -1,0 +1,38 @@
+# 1) Crear carpetas
+mkdir -p src/{common,ingest,normalize,api,dashboard} sql .github/workflows
+
+# 2) Virtualenv (opcional si no usarás Docker ahora)
+python -m venv .venv
+# Windows PowerShell:
+. .venv/Scripts/Activate.ps1
+# bash:
+# source .venv/Scripts/activate
+
+# 3) Requisitos
+cat > requirements.txt << 'EOF'
+pymisp==2.4.180
+shodan==1.30.0
+requests==2.31.0
+pandas==2.2.2
+SQLAlchemy==2.0.30
+psycopg2-binary==2.9.9
+pydantic==2.7.1
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+streamlit==1.36.0
+python-dotenv==1.0.1
+EOF
+pip install -r requirements.txt
+
+# 4) Ejemplo .env
+cat > .env.example << 'EOF'
+DB_URL=sqlite:///intel.db
+
+MISP_URL=https://tu-misp
+MISP_KEY=changeme
+MISP_VERIFY_SSL=true
+
+SHODAN_API_KEY=changeme
+CISA_KEV_URL=https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.csv
+EOF
+cp .env.example .env
