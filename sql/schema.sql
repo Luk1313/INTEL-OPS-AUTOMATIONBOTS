@@ -11,3 +11,14 @@ CREATE TABLE IF NOT EXISTS indicators (
   metadata   TEXT,       -- JSON como string
   UNIQUE (ioc_type, value, source)
 );
+
+## EJECUTA LUEGO
+
+python - << 'PY'
+import sqlite3, pathlib
+pathlib.Path('intel.db').touch()
+con = sqlite3.connect('intel.db')
+con.executescript(open('sql/schema.sql','r',encoding='utf-8').read())
+con.commit(); con.close()
+print("DB inicializada")
+PY
