@@ -103,3 +103,55 @@ Cuando el sistema se detenga o se decida cerrar:
                                 FastAPI                     Streamlit
 
 
+🛡 Buenas Prácticas
+Usar API keys seguras y almacenarlas en .env o GitHub Secrets.
+
+Mantener el historial de indicadores (first_seen, last_seen).
+
+Clasificar datos sensibles antes de compartir.
+
+Planificar migración a PostgreSQL en entornos productivos.
+
+Añadir test unitarios para cada ingestor.
+
+🧪 Troubleshooting
+ModuleNotFoundError → Activa el entorno virtual e instala dependencias.
+
+Streamlit no abre → Verifica que el puerto 8501 esté libre.
+
+Error de base de datos → Revisa sql/schema.sql y vuelve a inicializar.
+
+📈 Roadmap
+Ingesta completa de MISP.
+
+Búsquedas avanzadas (por rango de fechas, tipo de IoC).
+
+Exportación STIX/TAXII.
+
+Integración con Grafana / Kibana.
+
+Alertas vía Slack/Teams/Email.
+
+🎯 Métodos de Uso y Fin de Uso
+Métodos de Uso:
+
+Integrar en un pipeline de Threat Intelligence.
+
+Uso diario por equipos SOC para detección temprana.
+
+Entrenamiento y simulaciones Red Team/Blue Team.
+
+Fin de Uso:
+
+Cuando se migra a un sistema SIEM/SOAR centralizado.
+
+Reemplazo por solución con mayor capacidad de ingestión.
+
+Finalización del ciclo de vida de la herramienta en entornos temporales.
+
+📄 Licencia
+Este proyecto se distribuye bajo la licencia MIT (o la que definas en LICENSE).
+
+Desarrollado por: Lucas Rapiman Huican
+Rol: Analista de Ciberseguridad / Ingeniero en Ciberseguridad
+Objetivo: Potenciar la gestión de ciberinteligencia corporativa.
